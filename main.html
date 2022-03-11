@@ -48,12 +48,6 @@
         .card-info {
             background-color: rgb(207, 244, 252);
         }
-        .invalid-feedback {
-            width: 100%;
-            margin-top: 0.25rem;
-            font-size: .875em;
-            color: #dc3545;
-        }
     </style>
 </head>
 <body>
@@ -72,11 +66,8 @@
                               <label for="weight" class="col-sm-4 col-form-label">น้ำหนัก : </label>
                               <div class="col-sm-8">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="weight" aria-describedby="basic-addon4">
+                                    <input type="text" class="form-control" id="weight" aria-describedby="basic-addon4" >
                                     <span class="input-group-text" id="basic-addon4">กิโลกัรม</span>
-                                    <div id="validateWeight" style="display: none;" class="invalid-feedback">
-                                        กรุณากรอกน้ำหนัก
-                                    </div>
                                 </div>
                               </div>
                             </div>
@@ -84,17 +75,14 @@
                               <label for="height" class="col-sm-4 col-form-label">ส่วนสูง : </label>
                               <div class="col-sm-8">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" id="height" aria-describedby="basic-addon3">
+                                    <input type="text" class="form-control" id="height" aria-describedby="basic-addon3" >
                                     <span class="input-group-text" id="basic-addon3">เซนติเมตร</span>
-                                    <div id="validateHeight" style="display: none;" class="invalid-feedback">
-                                        กรุณากรอกส่วนสูง
-                                    </div>
                                 </div>
                               </div>
                             </div>
                             <div class="row mb-3 justify-content-end">
                                 <div class="col-sm-8">
-                                    <button type="button" onclick="validate()" class="btn btn-success btn-block">คำนวน</button>
+                                    <button type="button" onclick="processBMI()" class="btn btn-success btn-block">คำนวน</button>
                                 </div>
                             </div>
                             <div class="row mb-3">
@@ -120,7 +108,7 @@
 
                   <div class="card mt-4 card-info">
                     <div class="card-body">
-                        <table class="table table-info table-striped">
+                        <table class="table">
                             <thead>
                               <tr>
                                 <th scope="col">BMI kg/m2</th>
@@ -129,27 +117,27 @@
                               </tr>
                             </thead>
                             <tbody>
-                              <tr>
+                              <tr id="row-01">
                                 <td>น้อยกว่า 18.50</td>
                                 <td>น้ำหนักน้อย / ผอม</td>
                                 <td>มากกว่าคนปกติ</td>
                               </tr>
-                              <tr>
+                              <tr id="row-02">
                                 <td>ระหว่าง 18.50 - 22.90</td>
                                 <td>ปกติ (สุขภาพดี)</td>
                                 <td>เท่าคนปกติ</td>
                               </tr>
-                              <tr>
+                              <tr id="row-03">
                                 <td>ระหว่าง 23 - 24.90</td>
                                 <td>ท้วม / โรคอ้วนระดับ 1</td>
                                 <td>อันตรายระดับ 1</td>
                               </tr>
-                              <tr>
+                              <tr id="row-04">
                                 <td>ระหว่าง 25 - 29.90</td>
                                 <td>อ้วน / โรคอ้วนระดับ 2</td>
                                 <td>อันตรายระดับ 2</td>
                               </tr>
-                              <tr>
+                              <tr id="row-05">
                                 <td>มากกว่า 30</td>
                                 <td>อ้วนมาก / โรคอ้วนระดับ 3</td>
                                 <td>อันตรายระดับ 3</td>
