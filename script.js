@@ -31,7 +31,6 @@ function processBMI(){
     document.getElementById("bmi").value = bmiResult
     document.getElementById("level").value = level
     document.getElementById("row-"+row).classList.add("table-warning")
-
 }
 
 
